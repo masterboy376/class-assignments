@@ -2,7 +2,7 @@
 #include <math.h>
 #define PI 3.14
 
-// 1
+// question no. 1
 void simpleInterest()
 { // tested
     float p, r, t;
@@ -11,7 +11,7 @@ void simpleInterest()
     printf("simple inerest : %.2f\n", si);
 }
 
-// 2
+// question no. 2
 void fahrenheitToCelcius()
 { // tested
     float f;
@@ -20,7 +20,7 @@ void fahrenheitToCelcius()
     printf("clecius : %.2f\n", c);
 }
 
-// 3
+// question no. 3
 void circleAreaAndCircum()
 { // tested
     float r;
@@ -30,7 +30,7 @@ void circleAreaAndCircum()
     printf("area : %.2f and circum : %.2f\n", area, circum);
 }
 
-// 4
+// question no. 4
 void areaOfTriangle()
 { // tested
     float a, b, c;
@@ -40,13 +40,13 @@ void areaOfTriangle()
     printf("area : %.2f\n", area);
 }
 
-// 5
+// question no. 5
 void findRealRoots()
 { // tested
     float a, b, c;
     scanf("%f %f %f", &a, &b, &c);
     float d = (b * b) - (4 * a * c);
-    
+
     if (d < 0)
     {
         printf("no root exists\n");
@@ -59,7 +59,7 @@ void findRealRoots()
     }
 }
 
-// 6
+// question no. 6
 void largestOfThree()
 { // tested
     int a, b, c;
@@ -79,23 +79,31 @@ void largestOfThree()
     }
 }
 
-// 7
+// question no. 7
 void isLeapYear()
 { // tested
     int yr;
     scanf("%d", &yr);
 
-    if (yr % 4 == 0)
+    if (yr % 400 == 0)
     {
-        printf("yes it is a leap year\n");
+        printf("%d is a leap year.", yr);
+    }
+    else if (yr % 100 == 0)
+    {
+        printf("%d is not a leap year.", yr);
+    }
+    else if (yr % 4 == 0)
+    {
+        printf("%d is a leap year.", yr);
     }
     else
     {
-        printf("no it is not a leap year\n");
+        printf("%d is not a leap year.", yr);
     }
 }
 
-// 8
+// question no. 8
 void isAlphabet()
 { // tested
     char c;
@@ -107,7 +115,7 @@ void isAlphabet()
         printf("%c is not an alphabet.\n", c);
 }
 
-// 9
+// question no. 9
 void findSalary()
 {
     float basic, gross, da, hra;
