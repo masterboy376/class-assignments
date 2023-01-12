@@ -3,6 +3,130 @@
 
 const double e = 2.7182;
 
+// problem 1 
+void prob1_1(int n) {
+  for (int i = 1; i <= n; i++) {
+    for (int j = 1; j <= 2 * n - 1; j++) {
+      if (i > abs(n - j)) {
+        printf("%d ", 2 * (i - abs(j - n)) - 1);
+      } else {
+        printf("  ");
+      }
+    }
+    printf("\n");
+  }
+}
+
+void prob1_2(int n) {
+  for (int i = 1; i <= n; i++) {
+    for (int j = 1; j <= 2 * n - 1; j++) {
+      if (i > abs(n - j)) {
+        printf("%d ", 2 * (i - abs(j - n)));
+      } else {
+        printf("  ");
+      }
+    }
+    printf("\n");
+  }
+}
+
+void prob1_3(int n) {
+  for (int i = n; i >= 1; i--) {
+    for (int j = i; j >= 1; j--) {
+      printf("%d ", 2 * (n - j + 1) - 1);
+    }
+    printf("\n");
+  }
+}
+
+void prob1_4(int n) {
+  for (int i = 1; i <= n; i++) {
+    for (int j = 1; j <= 2 * n; j++) {
+      if (j <= i) {
+        printf("%d ", j);
+      } else if (j >= 2 * n - i + 1) {
+        printf("%d ", (2 * n - j) + 1);
+      } else {
+        printf("  ");
+      }
+    }
+    printf("\n");
+  }
+}
+
+void prob1_5(int n) {
+  for (int i = 1; i <= n - 1; i++) {
+    for (int j = 1; j <= 2 * n - 1; j++) {
+      if (i > abs(n - j)) {
+        printf("%d ", i - abs(j - n));
+      }
+    }
+    printf("\n");
+  }
+  for (int j = 1; j <= 2 * n - 1; j++) {
+      if (n > abs(n - j)) {
+        printf("%d ", n - abs(j - n));
+      }
+    }
+    printf("\n");
+  for (int i = n - 1; i >= 1; i--) {
+    for (int j = 1; j <= 2 * n - 1; j++) {
+      if (i > abs(n - j)) {
+        printf("%d ", i - abs(j - n));
+      }
+    }
+    printf("\n");
+  }
+}
+
+void prob1_6(int n) {
+  int cnt = 1;
+  for (int i = 1; i <= n; i++) {
+    for (int j = 1; j <= 2 * n - 1; j++) {
+      if (i > abs(n - j)) {
+        printf("%d ", cnt*cnt);
+        cnt++;
+      } else {
+        printf(" ");
+      }
+    }
+    printf("\n");
+  }
+}
+
+void Print_BinCoeff(int x)
+{
+    int temp=x;
+    int answer=x;
+    int c=2;
+    for(int i=0;i<=x;i++)
+    {	
+        if(i==0 || i==x)
+        {
+            printf("%-4d",1);
+        }
+        else
+        {
+            printf("%-4d",answer);
+            answer=answer*(temp-1);
+            answer=answer/c;
+            temp--;
+            c++;
+        }
+    }
+    printf("\n");
+}
+void prob1_7(int n){
+  for(int i=0;i<n;i++)
+    {
+        for (int k = n -  i-1 ; k > 0; k--)
+        {
+            printf("  ");
+        }
+        Print_BinCoeff(i);
+    }
+}
+
 // problem 2
 void prob2_1(){
     int n;
