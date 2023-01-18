@@ -75,7 +75,6 @@ void prob2(){
         break;
     
     default:
-    printf("%c\n",ch);
         printf("Err: Unrecognized character!\n");
         break;
     }
@@ -130,25 +129,25 @@ void prob4(){
     switch (per)
     {
     case 90 ... 100:
-        printf("S\n", (per));
+        printf("S\n");
         break;
     case 80 ... 89:
-        printf("A\n", (per));
+        printf("A\n");
         break;
     case 70 ... 79:
-        printf("B\n", (per));
+        printf("B\n");
         break;
     case 60 ... 69:
-        printf("C\n", (per));
+        printf("C\n");
         break;
     case 50 ... 59:
-        printf("D\n", (per));
+        printf("D\n");
         break;
     case 40 ... 49:
-        printf("E\n", (per));
+        printf("E\n");
         break;
     case 0 ... 39:
-        printf("FAIL\n", (per));
+        printf("FAIL\n");
         break;
     default:
         printf("Err: Range overflow/underflow!\n");
