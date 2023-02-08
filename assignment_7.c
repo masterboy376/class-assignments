@@ -281,6 +281,52 @@ void prob10()
     printf("%d\n", sum);
 }
 
+// problem 11
+void swap(int *xp, int *yp) {
+  int temp = *xp;
+  *xp = *yp;
+  *yp = temp;
+}
+void bubbleSort(int arr[], int n) {
+  int i, j;
+  for (i = 0; i < n - 1; i++)
+    for (j = 0; j < n - i - 1; j++)
+      if (arr[j] > arr[j + 1])
+        swap(&arr[j], &arr[j + 1]);
+}
+void prob11() {
+  int i = 0, j = 0, k = 0;
+  int n1;
+  scanf("%d", &n1);
+  int a1[n1];
+  for (i = 0; i < n1; i++) {
+    scanf("%d", &a1[i]);
+  }
+  int n2;
+  scanf("%d", &n2);
+  int a2[n2];
+  for (i = 0; i < n2; i++) {
+    scanf("%d", &a2[i]);
+  }
+  int m = n1 + n2;
+  int a3[m];
+  i=0;
+  while (i < n1) {
+    a3[k] = a1[i];
+    i += 1;
+    k += 1;
+  }
+  while (j < n2) {
+    a3[k] = a2[j];
+    j += 1;
+    k += 1;
+  }
+  bubbleSort(a3, m);
+  for (i = 0; i < m; i++)
+    printf("%d ", a3[i]);
+  printf("\n");
+}
+
 int main()
 {
     prob5();
