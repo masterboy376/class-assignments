@@ -2,7 +2,6 @@
 
 // helper functions
 
-
 // problem 1
 void prob1()
 {
@@ -86,32 +85,81 @@ void prob4()
 }
 
 // problem 5
-// int** matSum(int m1, int n1, int m2, int n2,int a1[m1][n1], int a2[m2][n2]){
-//   int m,n;
-//   if(m1!=m2 || n1!=n2){
-//     int res[1][1] = {{-1}};
-//     return res;
-//   }
-// }
-// void prob5(){
-//   int m1,n1;
-//   scanf("%d %d",&m1, &n1);
-//   int a1[m1][n1];
-//   for(int i =0;i<m1;i++){
-//     for(int j = 0 ;j<n1;j++){
-//       scanf("%d", &a1[i][j]);
-//     }
-//   }
-//   int m2,n2;
-//   scanf("%d %d",&m2, &n2);
-//   int a2[m2][n2];
-//   for(int i =0;i<m2;i++){
-//     for(int j = 0 ;j<n2;j++){
-//       scanf("%d", &a2[i][j]);
-//     }
-//   }
-//   int **sumRes = matSum(m1,n1,m2,n2,a1,a2);
-// }
+void prob5()
+{
+    int m1, n1;
+    int m2, n2;
+    scanf("%d %d", &m1, &n1);
+    scanf("%d %d", &m2, &n2);
+    int a1[m1][n1], a2[m2][n2], sumRes[m1][n1], mulRes[m1][n2];
+    for (int i = 0; i < m1; i++)
+    {
+        for (int j = 0; j < n1; j++)
+        {
+            scanf("%d", &a1[i][j]);
+        }
+    }
+    for (int i = 0; i < m2; i++)
+    {
+        for (int j = 0; j < n2; j++)
+        {
+            scanf("%d", &a2[i][j]);
+        }
+    }
+    // sum
+    if (m1 != m2 || n1 != n2)
+        printf("sum not possible");
+    else
+    {
+        for (int i = 0; i < m1; i++)
+        {
+            for (int j = 0; j < n1; j++)
+            {
+                sumRes[i][j] = a1[i][j] + a2[i][j];
+            }
+        }
+        printf("sum : \n");
+        for (int i = 0; i < m1; i++)
+        {
+            for (int j = 0; j < n1; j++)
+            {
+                printf("%d ", sumRes[i][j]);
+            }
+            printf("\n");
+        }
+    }
+    // multiply
+    if (n1 != m2)
+        printf("multiplication not possible");
+    else
+    {
+        for (int i = 0; i < m1; i++)
+        {
+            for (int j = 0; j < n2; j++)
+            {
+                mulRes[i][j]=0;
+            }
+        }
+        for (int i = 0; i < m1; i++)
+        {
+            for (int j = 0; j < n2; j++)
+            {
+                for(int k = 0; k<n1; k++){
+                    mulRes[i][j] += a1[i][k]*a2[k][j];
+                }
+            }
+        }
+        printf("mul : \n");
+        for (int i = 0; i < m1; i++)
+        {
+            for (int j = 0; j < n2; j++)
+            {
+                printf("%d ", mulRes[i][j]);
+            }
+            printf("\n");
+        }
+    }
+}
 
 // problem 6
 void prob6()
@@ -147,13 +195,8 @@ void prob7()
             scanf("%d", &a[i][j]);
         }
     }
-    int l = 0, r = 0;
-    for (int i = 0; i < n; i++)
-    {
-        l += a[i][i];
-        r += a[i][n - 1 - i];
-    }
-    printf("%d %d", l, r);
+    int ans = a[0][0] * (a[1][1] * a[2][2] - a[1][2] * a[2][1]) - a[0][1] * (a[1][0] * a[2][2] - a[1][2] * a[2][0]) + a[0][2] * (a[1][0] * a[2][1] - a[1][1] * a[2][0]);
+    printf("%d", ans);
 }
 
 // problem 8
@@ -169,29 +212,32 @@ void prob8()
     }
     for (int i = 0; i < n; i++)
     {
-        if(a[i]==x){
-            ans=i;
+        if (a[i] == x)
+        {
+            ans = i;
             break;
         }
     }
-    if(ans!=-1) printf("%d", ans);
-    else printf("not found");
+    if (ans != -1)
+        printf("%d", ans);
+    else
+        printf("not found");
 }
 
 // problem 9
-void swap(int* xp, int* yp)
+void swap(int *xp, int *yp)
 {
-	int temp = *xp;
-	*xp = *yp;
-	*yp = temp;
+    int temp = *xp;
+    *xp = *yp;
+    *yp = temp;
 }
 void bubbleSort(int arr[], int n)
 {
-	int i, j;
-	for (i = 0; i < n - 1; i++)
-		for (j = 0; j < n - i - 1; j++)
-			if (arr[j] > arr[j + 1])
-				swap(&arr[j], &arr[j + 1]);
+    int i, j;
+    for (i = 0; i < n - 1; i++)
+        for (j = 0; j < n - i - 1; j++)
+            if (arr[j] > arr[j + 1])
+                swap(&arr[j], &arr[j + 1]);
 }
 
 void prob9()
@@ -204,11 +250,11 @@ void prob9()
         scanf("%d", &a[i]);
     }
     bubbleSort(a, n);
-	printf("Sorted array: \n");
-	int i;
-	for (i = 0; i < n; i++)
-		printf("%d ", a[i]);
-	printf("\n");
+    printf("Sorted array: \n");
+    int i;
+    for (i = 0; i < n; i++)
+        printf("%d ", a[i]);
+    printf("\n");
 }
 
 // problem 10
@@ -229,7 +275,7 @@ void prob10()
     {
         for (int j = 0; j < n; ++j)
         {
-            sum+= a[i][j];
+            sum += a[i][j];
         }
     }
     printf("%d\n", sum);
@@ -237,7 +283,7 @@ void prob10()
 
 int main()
 {
-    prob8();
+    prob5();
 
     return 0;
 }
