@@ -1,5 +1,12 @@
 #include <stdio.h>
-#include <string.h>
+
+int customStrLen(char s[]){
+    int len = 0 ;
+    while(s[len]!='\0'){
+        len++;
+    }
+    return len;
+}
 
 void prob1()
 {
@@ -10,7 +17,7 @@ void prob1()
     printf("Enter a string:\n");
     gets(string1);
 
-    length = strlen(string1);
+    length = customStrLen(string1);
 
     for (i = 0; i < length / 2 + 1; i++)
     {
@@ -56,7 +63,7 @@ void prob3()
     printf("Enter a string:\n");
     gets(string1);
 
-    length = strlen(string1);
+    length = customStrLen(string1);
 
     for (i = 0; i < length; i++)
     {
@@ -88,7 +95,7 @@ void prob4()
     printf("Enter a string:\n");
     gets(string1);
 
-    length = strlen(string1);
+    length = customStrLen(string1);
     char string2[length];
 
     for (i = 0; i < length; i++)
@@ -107,8 +114,8 @@ void prob5()
     gets(string1);
     gets(string2);
 
-    length1 = strlen(string1);
-    length2 = strlen(string2);
+    length1 = customStrLen(string1);
+    length2 = customStrLen(string2);
 
     if (length1 != length2)
         flag = 0;
@@ -138,7 +145,7 @@ void prob6()
     printf("Enter a string:\n");
     gets(string1);
 
-    length = strlen(string1);
+    length = customStrLen(string1);
 
     for (i = 0; i < length; i++)
     {
@@ -172,7 +179,7 @@ void prob7()
     char string[200];
     printf("Enter a string:\n");
     gets(string);
-    int i, j, max, length = strlen(string);
+    int i, j, max, length = customStrLen(string);
     char maxChar = string[0];
     int freq[length];
 
@@ -208,7 +215,7 @@ void prob8()
     char string[200];
     printf("Enter a string:\n");
     gets(string);
-    int length = strlen(string);
+    int length = customStrLen(string);
     char a;
     int i, j;
 
@@ -232,7 +239,7 @@ void prob9()
     char string[200];
     printf("Enter a string:\n");
     gets(string);
-    int st, en, length = strlen(string);
+    int st, en, length = customStrLen(string);
     printf("Enter start and end index:\n");
     scanf("%d", &st);
     scanf("%d", &en);
@@ -260,7 +267,7 @@ void prob10()
     char string[200];
     printf("Enter a string:\n");
     gets(string);
-    int ans = 0, length = strlen(string);
+    int ans = 0, length = customStrLen(string);
     int i;
 
     for (i = 0; i <= length - 3; i++)
@@ -295,7 +302,7 @@ void prob11()
     printf("Enter strings:\n");
     gets(string1);
     gets(string2);
-    int length2 = strlen(string2), length1 = strlen(string1);
+    int length2 = customStrLen(string2), length1 = customStrLen(string1);
     int i, j = 0;
     char res[length1 + length2 + 1];
 
@@ -317,7 +324,7 @@ void prob12()
     char string1[200];
     printf("Enter string:\n");
     gets(string1);
-    int length1 = strlen(string1);
+    int length1 = customStrLen(string1);
     int i;
 
     for (i = 0; i < length1; i++)
@@ -336,7 +343,7 @@ void prob13()
     gets(string1);
     printf("Enter character:\n");
     scanf("%c", &ch);
-    int length1 = strlen(string1);
+    int length1 = customStrLen(string1);
     int i;
 
     for (i = 0; i < length1; i++)
