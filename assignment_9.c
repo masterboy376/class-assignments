@@ -84,12 +84,12 @@ void prob4() {
     struct dob birth;
   } e[10];
   for (int i = 0; i < 10; i++) {
-    printf("enter student %d details: \n", i + 1);
+    printf("enter employee %d details: \n", i + 1);
     printf("name: ");
     scanf("%s", &e[i].name);
-    printf("age: ");
+    printf("salary: ");
     scanf("%d", &e[i].salary);
-    printf("marks: ");
+    printf("date of birth: ");
     scanf("%d %d %d", &e[i].birth.d, &e[i].birth.m, &e[i].birth.y);
   }
   printf(
@@ -116,10 +116,10 @@ void prob4() {
     if (e[i].birth.y < oldest.birth.y)
       oldest = e[i];
     else if (e[i].birth.y == oldest.birth.y) {
-      if (e[i].birth.m > oldest.birth.m)
+      if (e[i].birth.m < oldest.birth.m)
         oldest = e[i];
       else if (e[i].birth.m == oldest.birth.m) {
-        if (e[i].birth.d > oldest.birth.d)
+        if (e[i].birth.d < oldest.birth.d)
           oldest = e[i];
       }
     }
@@ -180,6 +180,6 @@ void prob6() {
 }
 
 int main() {
-  prob1();
+  prob4();
   return 0;
 }
